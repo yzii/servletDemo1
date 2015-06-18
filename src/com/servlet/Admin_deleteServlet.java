@@ -70,7 +70,7 @@ public class Admin_deleteServlet extends HttpServlet {
 		int userId =Integer.parseInt(request.getParameter("adminId"));
 		int res = ac.deleteAdmin(userId);
 		if(res > 0){
-			out.print("<script></script>window.location.href='../jsp/adminmanage.jsp';</script>");
+			out.print("<script>alert('delete success');window.location.href='../jsp/adminmanage.jsp';</script>");
 		}else{
 			out.print("<script>alert('delete failed');window.history.back();</script>");
 		}
