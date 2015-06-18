@@ -24,18 +24,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	<div class="content">
 	       	  <div class="rtbd">
 	           	<div class="jyjl">
-	              <h2>><a href="bssystem/managehome.jsp">后台主页</a>>管理员列表</h2>
+	              <h2>>后台主页</a>>管理员列表</h2>
 	            </div>
 	        	<table class="tblist" width="100%" cellspacing="0" cellpadding="0">                       
 	              <%
                       AdinCrtl ac =new AdinCrtl();
                       ArrayList<AdminInfo> al = ac.selAdmin();
                       for(AdminInfo ai : al){
-                       	              %>
+                      %>
 	              <tr>
 	                <td align="right">
 	                <input type="hidden" name="adminId" id="adminId" value="<%=ai.getAdmin_Id()%>"/>
-	                                                        管理员：
+	                管理员：
 	                <input type="text" name="admin_Name" id="admin_Name" value="<%=ai.getAdmin_name() %>"/></td>
 	                <td align="left">&nbsp;密码：<input type="password" style="width: 155px;" name="admin_Pwd" id="admin_Pwd" value="<%=ai.getAdmin_pwd() %>"></td>
 	                <td align="center"><a href="jsp/adminedit.jsp?adminId=<%=ai.getAdmin_Id() %>">修改</a>&nbsp;&nbsp;<a href="servlet/Admin_deleteServlet?adminId=<%=ai.getAdmin_Id() %>" onclick="return confirm('确定要删除吗？')">删除</a></td>
